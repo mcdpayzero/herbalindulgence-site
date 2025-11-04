@@ -32,8 +32,9 @@ header nav ul { display: flex; gap: 1rem; list-style: none; margin: 0; padding: 
 header nav a { color: white; text-decoration: none; font-weight: 400; }
 .trust-badges { display: flex; gap: 0.5rem; align-items: center; font-size: 0.9rem; }
 
+/* Hero Background - Relative Path */
 .hero { 
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/assets/images/hardware-hero.jpg'); 
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/hardware-hero.jpg'); 
   background-size: cover; 
   height: 60vh; 
   display: flex; 
@@ -63,15 +64,21 @@ header nav a { color: white; text-decoration: none; font-weight: 400; }
   gap: 2rem; 
   padding: 2rem; 
 }
+
+/* Card Leaf Motif - Use Uploaded SVG (Relative) or Keep Data URI */
 .card { 
   background: white; 
   padding: 1.5rem; 
   border-radius: 8px; 
   box-shadow: var(--shadow); 
   text-align: center; 
-  /* Subtle leaf motif */
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 20 Q30 40 50 60 Q70 40 50 20" fill="none" stroke="%23228B22" stroke-width="0.5" opacity="0.1"/></svg>'); 
+  /* Option 1: Relative SVG File (if uploaded) */
+  background-image: url('../images/leaf-motif.svg'); 
   background-repeat: repeat; 
+  background-size: 50px; 
+  opacity: 0.1; /* Subtle */
+  /* Option 2: Keep Inline Data URI (no file needed, always works) */
+  /* background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 20 Q30 40 50 60 Q70 40 50 20" fill="none" stroke="%23228B22" stroke-width="0.5" opacity="0.1"/></svg>'); */
 }
 
 table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
@@ -117,4 +124,5 @@ footer a { color: white; text-decoration: none; }
 /* Accessibility: Focus states */
 a:focus, button:focus { outline: 2px solid var(--gold); outline-offset: 2px; }
 /* High contrast mode support */
+
 @media (prefers-contrast: high) { :root { --text: #000; --neutral: #fff; } }
