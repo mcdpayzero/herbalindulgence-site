@@ -1,0 +1,9 @@
+<nav class="pagination" role="navigation" aria-label="Posts navigation">
+  {% if paginate.previous %}
+    <a href="{{ paginate.previous_page_path | relative_url }}" class="cta" rel="prev">← Newer Posts</a>
+  {% endif %}
+  <span class="page-info">Page {{ paginate.page }} of {{ paginate.pages }}</span>
+  {% if paginate.next %}
+    <a href="{{ paginate.next_page_path | relative_url }}" class="cta" rel="next">Older Posts →</a>
+  {% endif %}
+</nav>

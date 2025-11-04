@@ -1,0 +1,27 @@
+title: Herbal Indulgence
+description: Home of High-Risk Processing - Next-gen POS for cannabis dispensaries & growers. Integrated with MarijuanaSoftware & Green.Money.
+baseurl: ""  # Change to "/repo-name" if not root domain
+url: "https://herbalindulgence.com"
+paginate: 5  # For resources blog
+
+# SEO & Plugins
+permalink: pretty
+exclude: [Gemfile*, README.md, node_modules]
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-paginate
+
+# Design Vars
+colors:
+  green: '#228B22'
+  gold: '#DAA520'
+  neutral: '#F5F5F5'
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"

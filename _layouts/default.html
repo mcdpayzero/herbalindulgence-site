@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} | {{ site.title }}</title>
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
+  {% seo %}
+</head>
+<body>
+  {% include header.html %}
+  
+  <main id="content" role="main">
+    {{ content }}
+  </main>
+  
+  {% include footer.html %}
+  
+  <script src="{{ site.baseurl }}/assets/js/age-gate.js"></script>
+  <script src="{{ site.baseurl }}/assets/js/configurator.js"></script>
+  <!-- Tidio Chat Embed (replace YOUR_KEY) -->
+  <script src="//code.tidio.co/YOUR_KEY.js" async></script>
+</body>
+</html>
