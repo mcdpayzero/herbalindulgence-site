@@ -67,18 +67,29 @@ header nav a { color: white; text-decoration: none; font-weight: 400; }
 
 /* Card Leaf Motif - Use Uploaded SVG (Relative) or Keep Data URI */
 .card { 
+  position: relative; /* Enables ::before stacking */
   background: white; 
   padding: 1.5rem; 
   border-radius: 8px; 
   box-shadow: var(--shadow); 
   text-align: center; 
-  /* Option 1: Relative SVG File (if uploaded) */
+  overflow: hidden; /* Clips motif to card bounds */
+}
+
+/* Isolated Background Layer */
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-image: url('../images/leaf-motif.svg'); 
   background-repeat: repeat; 
-  background-size: 50px; 
-  opacity: 0.1; /* Subtle */
-  /* Option 2: Keep Inline Data URI (no file needed, always works) */
-  /* background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 20 Q30 40 50 60 Q70 40 50 20" fill="none" stroke="%23228B22" stroke-width="0.5" opacity="0.1"/></svg>'); */
+  background-size: 50px 50px; 
+  opacity: 0.1; /* Only affects motif, not card content */
+  z-index: -1; /* Ensures it's behind text/images */
+  pointer-events: none; /* No interaction with motif */
 }
 
 table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
@@ -126,3 +137,4 @@ a:focus, button:focus { outline: 2px solid var(--gold); outline-offset: 2px; }
 /* High contrast mode support */
 
 @media (prefers-contrast: high) { :root { --text: #000; --neutral: #fff; } }
+
