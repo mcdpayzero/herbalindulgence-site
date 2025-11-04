@@ -2,7 +2,6 @@
 layout: default
 title: Resources - Educate & Grow
 paginate: true  # Enables pagination here
-permalink: /resources/page/:num.html
 ---
 <section class="hero">
   <h1>Insights for Cannabis Operators</h1>
@@ -27,5 +26,6 @@ permalink: /resources/page/:num.html
 
 <h2>Webinars</h2>
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/YOUR_WEBINAR_ID" title="Past Webinar" frameborder="0" allowfullscreen></iframe>
+
 
 <a href="https://formspree.io/YOUR_EMAIL" class="cta">Subscribe for Updates</a>
