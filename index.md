@@ -6,7 +6,7 @@ description: Secure, compliant POS for cannabis industry.
 <section class="hero">
   <h1>Home of High-Risk Processing</h1>
   <p>Empowering dispensaries and growers with next-gen hardware and eDebit solutions. Integrated with MarijuanaSoftware LLC and Green.Money.</p>
-  <a href="{{ site.baseurl }}/demo.html" class="cta">Request Free Demo</a>
+<a href="{{ site.baseurl | append: 'demo.html' }}" class="cta">Request Free Demo</a>
   <!-- Embedded Video: Replace ID -->
   <iframe width="100%" height="315" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="Hardware Demo" frameborder="0" allowfullscreen></iframe>
 </section>
@@ -32,4 +32,5 @@ description: Secure, compliant POS for cannabis industry.
     <blockquote>"Cut processing time by 40%—Herbal Indulgence handles high-risk like pros." — Dispensary X</blockquote>
     <blockquote>"eDebit integration saved us thousands in cash handling." — Grower Y</blockquote>
   </div>
+
 </section>
