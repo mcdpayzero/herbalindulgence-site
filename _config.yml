@@ -2,7 +2,6 @@ title: Herbal Indulgence
 description: Home of High-Risk Processing - Next-gen POS for cannabis dispensaries & growers.
 baseurl: "/herbalindulgence-site"  # Add this—fixes paths for project repo
 url: "https://mcdpayzero.github.io"  # Your GitHub username
-paginate: 5
 
 # SEO & Plugins
 permalink: pretty
@@ -11,6 +10,10 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-paginate
+  
+# Pagination Defaults (Ensures post collection)
+paginate: 5
+paginate_path: /page:num/  # Global fallback if needed  
 
 # Disable fallback theme
 theme: null
@@ -33,4 +36,5 @@ colors:
   green: '#228B22'
   gold: '#DAA520'
   neutral: '#F5F5F5'
+
 
