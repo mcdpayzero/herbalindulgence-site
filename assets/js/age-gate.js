@@ -19,53 +19,42 @@ document.addEventListener('DOMContentLoaded', function() {
       position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
       background: rgba(0,0,0,0.9); display: flex; justify-content: center; align-items: center; 
       z-index: 10000; color: white; flex-direction: column; text-align: center; padding: 2rem;
-      font-family: 'Roboto', sans-serif; pointer-events: auto;
+      font-family: 'Roboto', sans-serif; pointer-events: none; /* Allow clicks to pass through */
     `;
+    ageGate.querySelectorAll('button').forEach(btn => btn.style.pointerEvents = 'auto'); // Explicit on buttons
     document.body.appendChild(ageGate);
     console.log('Gate appended to body');
 
-    setTimeout(() => {
-      const yesBtn = document.getElementById('yesBtn');
-      const noBtn = document.getElementById('noBtn');
-      if (yesBtn && noBtn) {
-        console.log('Buttons found - attaching listeners');
-        // Yes Button
-        yesBtn.addEventListener('click', function(e) {
-          console.log('Yes click detected'); // Debug
-          yesBtn.style.border = '3px solid red'; // TEMP Visual flash
-          setTimeout(() => yesBtn.style.border = '', 500); // Reset
-          alert('Yes clicked! Gate should hide now.'); // TEMP - remove after
-          e.preventDefault();
-          e.stopPropagation();
-          e.stopImmediatePropagation();
-          localStorage.setItem('ageVerified', 'true');
-          ageGate.style.display = 'none'; // Fallback hide
-          setTimeout(() => ageGate.remove(), 100); // Ensure removal
-          console.log('Yes - gate hidden/removed');
-        });
-        // No Button
-        noBtn.addEventListener('click', function(e) {
-          console.log('No click detected'); // Debug
-          noBtn.style.border = '3px solid red'; // TEMP Visual flash
-          setTimeout(() => noBtn.style.border = '', 500); // Reset
-          alert('No clicked! Redirecting...'); // TEMP - remove after
-          e.preventDefault();
-          e.stopPropagation();
-          e.stopImmediatePropagation();
-          console.log('No - redirecting');
-          window.location.href = 'https://www.responsiblemarijuana.org';
-        });
-        yesBtn.focus();
-        // Allow clicks on gate bg (no action)
-        ageGate.addEventListener('click', function(e) {
-          if (e.target === ageGate) {
-            console.log('Clicked gate background - ignore');
-          }
-        });
-      } else {
-        console.error('Buttons not found - check innerHTML');
+    // Capture Phase Listener on Gate (fires before bubbling)
+    ageGate.addEventListener('click', function(e) {
+      console.log('Click on gate - target:', e.target.id || e.target.tagName); // Debug: Logs button ID or TAG
+      if (e.target.id === 'yesBtn') {
+        console.log('Yes button clicked - handling');
+        localStorage.setItem('ageVerified', 'true');
+        ageGate.remove();
+      } else if (e.target.id === 'noBtn') {
+        console.log('No button clicked - redirecting');
+        window.location.href = 'https://www.responsiblemarijuana.org';
       }
-    }, 200); // Longer delay for safety
+      // Ignore bg clicks
+    }, true); // true = capture phase (top-down)
+
+    // Fallback bubble phase on buttons
+    const yesBtn = document.getElementById('yesBtn');
+    const noBtn = document.getElementById('noBtn');
+    if (yesBtn && noBtn) {
+      console.log('Fallback listeners attached');
+      yesBtn.addEventListener('click', function(e) {
+        console.log('Fallback Yes click');
+        localStorage.setItem('ageVerified', 'true');
+        ageGate.remove();
+      });
+      noBtn.addEventListener('click', function(e) {
+        console.log('Fallback No click');
+        window.location.href = 'https://www.responsiblemarijuana.org';
+      });
+      yesBtn.focus();
+    }
   } else {
     console.log('Age verified - skipping gate');
   }
