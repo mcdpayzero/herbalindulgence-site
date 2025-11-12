@@ -24,29 +24,40 @@ document.addEventListener('DOMContentLoaded', function() {
     document.body.appendChild(ageGate);
     console.log('Gate appended to body');
 
+    // Delay for full DOM render
     setTimeout(() => {
       const yesBtn = document.getElementById('yesBtn');
       const noBtn = document.getElementById('noBtn');
       if (yesBtn && noBtn) {
         console.log('Buttons found - attaching listeners');
+        // Yes Button
         yesBtn.addEventListener('click', function(e) {
-          e.preventDefault();
-          e.stopPropagation(); // Prevent bubbling to gate
-          localStorage.setItem('ageVerified', 'true');
-          ageGate.remove();
-          console.log('Yes clicked - gate removed');
-        });
-        noBtn.addEventListener('click', function(e) {
+          alert('Yes clicked!'); // TEMP DEBUG - remove after test
           e.preventDefault();
           e.stopPropagation();
-          console.log('No clicked - redirecting');
+          e.stopImmediatePropagation();
+          localStorage.setItem('ageVerified', 'true');
+          ageGate.remove();
+          console.log('Yes - gate removed');
+        });
+        // No Button
+        noBtn.addEventListener('click', function(e) {
+          alert('No clicked!'); // TEMP DEBUG - remove after test
+          e.preventDefault();
+          e.stopPropagation();
+          e.stopImmediatePropagation();
+          console.log('No - redirecting');
           window.location.href = 'https://www.responsiblemarijuana.org';
         });
-        yesBtn.focus(); // Keyboard nav
+        // Focus & trap for keyboard
+        yesBtn.focus();
+        ageGate.addEventListener('click', function(e) {
+          if (e.target === ageGate) return; // Allow clicks inside
+        });
       } else {
-        console.error('Buttons not found after delay');
+        console.error('Buttons not found - check innerHTML');
       }
-    }, 100); // Short delay for stability
+    }, 100);
   } else {
     console.log('Age verified - skipping gate');
   }
