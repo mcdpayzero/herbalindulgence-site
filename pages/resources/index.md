@@ -2,7 +2,6 @@
 layout: default
 title: Resources - Educate & Grow
 paginate: true
-paginate_path: /pages/resources/page:num/
 ---
 <section class="hero">
   <h1>Insights for Cannabis Operators</h1>
@@ -22,7 +21,7 @@ paginate_path: /pages/resources/page:num/
   {% include paginate.html %}
 {% else %}
   <div class="card">
-    <p>No posts yet—coming soon! Start with our <a href="demo.html" class="cta">Free Demo</a> for compliance tips.</p>
+    <p>No posts indexed—check YAML in _posts/. <a href="{{ site.baseurl }}/demo.html" class="cta">Request a Demo</a></p>
   </div>
 {% endif %}
 
@@ -34,6 +33,4 @@ paginate_path: /pages/resources/page:num/
 <h2>Webinars</h2>
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/YOUR_WEBINAR_ID" title="Past Webinar" frameborder="0" allowfullscreen loading="lazy"></iframe>
 
-<a href="https://formspree.io/mrcashdiscount@gmail.com" class="cta">Subscribe for Updates</a>
-
-
+<a href="{{ site.baseurl }}/demo.html" class="cta">Subscribe for Updates</a>  <!-- Fixed here too, if subscribe links to demo -->
