@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Resources - Educate & Grow
-paginate: true
+paginate: true  # For future pagination; uses site.posts loop below
 paginate_path: /resources/page:num/
 ---
 <section class="hero">
@@ -19,12 +19,6 @@ paginate_path: /resources/page:num/
     <small>{{ post.date | date: '%B %d, %Y' }}</small>
   </article>
 {% endfor %}
-  {% include paginate.html %}
-{% else %}
-  <div class="card">
-    <p>No posts indexed—check YAML in _posts/. <a href="{{ site.baseurl }}/demo.html" class="cta">Request a Demo</a></p>
-  </div>
-{% endif %}
 
 <h2>Downloads</h2>
 <ul>
@@ -34,5 +28,4 @@ paginate_path: /resources/page:num/
 <h2>Webinars</h2>
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/YOUR_WEBINAR_ID" title="Past Webinar" frameborder="0" allowfullscreen loading="lazy"></iframe>
 
-<a href="{{ site.baseurl }}/demo.html" class="cta">Subscribe for Updates</a>  <!-- Fixed here too, if subscribe links to demo -->
-
+<a href="{{ site.baseurl }}/demo.html" class="cta">Subscribe for Updates</a>
