@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Building a Compliant Farm Office: Hardware Tips for Growers
+title: "Building a Compliant Farm Office: Hardware Tips for Growers"
 date: 2025-10-07
-excerpt: Rugged terminals and scanners built for humidity and high-traffic. Pair with MarijuanaSoftware for METRC compliance and Green.Money for payments. Setup guide, cost breakdowns, and why affordable bundles ($499 start) scale small ops.
+excerpt: "Rugged terminals and scanners built for humidity and high-traffic. Pair with MarijuanaSoftware for METRC compliance and Green.Money for payments. Setup guide, cost breakdowns, and why affordable bundles ($499 start) scale small ops."
 image: /assets/images/farm-office.jpg
 ---
 
