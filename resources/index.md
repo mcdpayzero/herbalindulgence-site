@@ -1,8 +1,8 @@
-
 ---
 layout: default
 title: Resources - Educate & Grow
 paginate: true
+paginate_path: /resources/page:num/
 ---
 <section class="hero">
   <h1>Insights for Cannabis Operators</h1>
@@ -10,20 +10,21 @@ paginate: true
 </section>
 
 <h2>Latest Posts</h2>
-{% for post in site.posts limit: 10 %}
-  <article class="card">
-    <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-    <p>{{ post.excerpt | strip_html | truncate: 150 }}</p>
-    {% if post.image %}<img src="{{ post.image | relative_url }}" alt="{{ post.title }}" style="width: 100%; height: auto; border-radius: 8px;">{% endif %}
-    <small>{{ post.date | date: '%B %d, %Y' }}</small>
-  </article>
+{% if paginate.posts.size > 0 %}
+  {% for post in paginate.posts %}
+    <article class="card">
+      <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+      <p>{{ post.excerpt | strip_html | truncate: 150 }}</p>
+      {% if post.image %}<img src="{{ post.image | relative_url }}" alt="{{ post.title }}" style="width: 100%; height: auto; border-radius: 8px;">{% endif %}
+      <small>{{ post.date | date: '%B %d, %Y' }}</small>
+    </article>
+  {% endfor %}
+  {% include paginate.html %}
 {% else %}
   <div class="card">
     <p>No posts indexed—check YAML in _posts/. <a href="{{ site.baseurl }}/demo.html" class="cta">Request a Demo</a></p>
   </div>
-{% endfor %}
-<!-- Temp: Comment pagination -->
-<!-- {% include paginate.html %} -->
+{% endif %}
 
 <h2>Downloads</h2>
 <ul>
