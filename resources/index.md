@@ -10,15 +10,15 @@ paginate_path: /resources/page:num/
 </section>
 
 <h2>Latest Posts</h2>
-{% if paginate.posts.size > 0 %}
-  {% for post in paginate.posts %}
-    <article class="card">
-      <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-      <p>{{ post.excerpt | strip_html | truncate: 150 }}</p>
-      {% if post.image %}<img src="{{ post.image | relative_url }}" alt="{{ post.title }}" style="width: 100%; height: auto; border-radius: 8px;">{% endif %}
-      <small>{{ post.date | date: '%B %d, %Y' }}</small>
-    </article>
-  {% endfor %}
+{% assign sorted_posts = site.posts | sort: 'date' | reverse %}
+{% for post in sorted_posts limit: 10 %}
+  <article class="card">
+    <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+    <p>{{ post.excerpt | strip_html | truncate: 150 }}</p>
+    {% if post.image %}<img src="{{ post.image | relative_url }}" alt="{{ post.title }}" style="width: 100%; height: auto; border-radius: 8px;">{% endif %}
+    <small>{{ post.date | date: '%B %d, %Y' }}</small>
+  </article>
+{% endfor %}
   {% include paginate.html %}
 {% else %}
   <div class="card">
