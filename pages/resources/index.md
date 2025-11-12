@@ -2,6 +2,7 @@
 layout: default
 title: Resources - Educate & Grow
 paginate: true
+paginate_path: /pages/resources/page:num/
 ---
 <section class="hero">
   <h1>Insights for Cannabis Operators</h1>
@@ -34,3 +35,4 @@ paginate: true
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/YOUR_WEBINAR_ID" title="Past Webinar" frameborder="0" allowfullscreen loading="lazy"></iframe>
 
 <a href="https://formspree.io/mrcashdiscount@gmail.com" class="cta">Subscribe for Updates</a>
+
