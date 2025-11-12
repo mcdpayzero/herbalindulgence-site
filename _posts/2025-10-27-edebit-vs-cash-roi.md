@@ -1,8 +1,8 @@
 ---
 layout: default  # Applies your template (header/footer/CSS)
-title: eDebit vs. Cash: Calculating ROI for Cannabis Growers
+title: "eDebit vs. Cash: Calculating ROI for Cannabis Growers"
 date: 2025-10-27
-excerpt: Ditch cash hassles—eDebit cuts handling costs by 40% while ensuring PCI-DSS compliance. Learn the math behind bank-direct payments via Green.Money, METRC tie-ins, and hardware setups for farm offices. Real grower case studies show payback in 3 months.
+excerpt: "Ditch cash hassles—eDebit cuts handling costs by 40% while ensuring PCI-DSS compliance. Learn the math behind bank-direct payments via Green.Money, METRC tie-ins, and hardware setups for farm offices. Real grower case studies show payback in 3 months."
 image: /assets/images/metrc-hero.jpg  # Optional placeholder (upload later)
 ---
 
@@ -26,3 +26,4 @@ Ditch cash hassles—eDebit cuts handling costs by 40% while ensuring PCI-DSS co
 Switch to eDebit today and watch your margins grow. [Request a Free Demo](/demo.html) for a custom ROI calc.
 
 (Word count: 398)
+
