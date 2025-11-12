@@ -15,8 +15,22 @@ plugins:
 # Disable fallback theme
 theme: null
 
+# Defaults for Layouts
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: default
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: default
+      
 # Design Vars
 colors:
   green: '#228B22'
   gold: '#DAA520'
   neutral: '#F5F5F5'
+
