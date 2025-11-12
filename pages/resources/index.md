@@ -22,7 +22,7 @@ paginate_path: /pages/resources/page:num/
   {% include paginate.html %}
 {% else %}
   <div class="card">
-    <p>No posts yet—coming soon! Start with our <a href="/demo.html" class="cta">Free Demo</a> for compliance tips.</p>
+    <p>No posts yet—coming soon! Start with our <a href="demo.html" class="cta">Free Demo</a> for compliance tips.</p>
   </div>
 {% endif %}
 
@@ -35,4 +35,5 @@ paginate_path: /pages/resources/page:num/
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/YOUR_WEBINAR_ID" title="Past Webinar" frameborder="0" allowfullscreen loading="lazy"></iframe>
 
 <a href="https://formspree.io/mrcashdiscount@gmail.com" class="cta">Subscribe for Updates</a>
+
 
