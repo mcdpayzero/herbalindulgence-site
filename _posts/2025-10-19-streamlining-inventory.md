@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Streamlining Inventory with MarijuanaSoftware: A Grower's Guide
+title: "Streamlining Inventory with MarijuanaSoftware: A Grower's Guide"
 date: 2025-10-19
-excerpt: From seed to sale, AI-powered tracking eliminates stockouts. Integrate our rugged scanners and terminals for METRC auto-reports—cut manual entry by 70%. Tips for small ops, plus eDebit payment flows to boost cash flow.
+excerpt: "From seed to sale, AI-powered tracking eliminates stockouts. Integrate our rugged scanners and terminals for METRC auto-reports—cut manual entry by 70%. Tips for small ops, plus eDebit payment flows to boost cash flow."
 image: /assets/images/inventory-streamline.jpg
 ---
 
@@ -26,3 +26,4 @@ From seed to sale, AI-powered tracking eliminates stockouts. Integrate our rugge
 Transform your workflow. [Request a Free Demo](/demo.html) for a personalized inventory audit.
 
 (Word count: 392)
+
